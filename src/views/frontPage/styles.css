@@ -1,0 +1,106 @@
+@import "../../../node_modules/antd/dist/antd.css";
+
+.site-layout-content {
+	background: #f5f5ff;
+	padding: 0px 24px 24px 24px;
+	min-height: 280px;
+	font-family: "Dosis", sans-serif;
+}
+.ant-layout-header {
+  background: #6f4a8e;
+}
+.logo {
+	width: 120px;
+	height: 31px;
+	background: #5450a8;
+	margin: 16px 24px 16px 0;
+	float: left;
+}
+.nav {
+  background-color: #5450a8;
+}
+.header {
+	display: grid;
+	grid-template-columns: min-content 1fr 0.5fr;
+	align-items: center;
+/* 	background-image: url("./backRings.gif");
+	background-size: 600px; */
+}
+.mainSvg {
+	width: 50%;
+	margin-left: 30%;
+	margin-top: -10%;
+	grid-column: 2;
+	grid-row: 1;
+	justify-self: flex-start;
+	margin-left: -2%;
+}
+h1 {
+	font: 700 4rem/1 "Dosis";
+	text-transform: uppercase;
+	color: #5450a9;
+	padding: 0.5rem 1rem 0.5rem 0.5rem;
+	font-family: "Dosis", sans-serif;
+	@media (min-width: 850px) {
+		font: 700 4.8rem/1 "Dosis";
+	}
+}
+
+.cardCont {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+.workCard {
+}
+.barSvg {
+	width: 70%;
+	height: 80%;
+	margin: 0px auto;
+}
+.goalSvg {
+	width: 5%;
+	height: 5%;
+}
+.workCardMeta {
+	display: flex;
+	/*   justify-content: center;
+ */
+	align-items: center;
+}
+.cardTitle {
+	color: #6f4a8e;
+	/* padding: 0.5rem 1rem 0.5rem 0.5rem; */
+	font-family: "Dosis", sans-serif;
+	font-weight: 500;
+}
+.ant-card-head {
+	background-color: #6f4a8e;
+}
+.extraInfo {
+	padding: 5px;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.extraText {
+	font-size: large;
+	color: #5450a9;
+	font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+.dayTag{
+  padding: 5px;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.site-statistic-demo-card {
+  padding: 10px;
+}
+/* .nutCard {
+	background-image: url("./backRings.gif");
+} */
