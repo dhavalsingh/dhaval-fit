@@ -45,10 +45,15 @@ function FrontPage() {
 		<Layout className="layout">
 			<Header>
 				<div className="logo" />
-				<Menu className="nav" mode="horizontal" defaultSelectedKeys={["1"]}>
-					<Menu.Item key="1">nav 1</Menu.Item>
-					<Menu.Item key="2">nav 2</Menu.Item>
-					<Menu.Item key="3">nav 3</Menu.Item>
+				<Menu
+					theme="dark"
+					className="nav"
+					mode="horizontal"
+					defaultSelectedKeys={["1"]}
+				>
+					<Menu.Item key="1">Dashboard</Menu.Item>
+					<Menu.Item key="2">Nutrition</Menu.Item>
+					<Menu.Item key="3">Workout</Menu.Item>
 				</Menu>
 			</Header>
 			<Content>
@@ -56,8 +61,9 @@ function FrontPage() {
 					<div className="header">
 						<h1>60 Days to glory</h1>
 						<div>
-							<Main className="mainSvg" />
-						</div>
+							<img className="mainSvg" src={require("./gym1.gif")} />
+{/* 							<Main className="mainSvg" />
+ */}						</div>
 						<div className="site-statistic-demo-card">
 							<Row gutter={16}>
 								<Col span={8}>
@@ -125,7 +131,7 @@ function FrontPage() {
 						}}
 					>
 						<h1>Daily Progress</h1>
-						<img className="goalSvg" src={require("./progress.gif")} />
+						<img className="goalSvg" src="https://www.flaticon.com/svg/static/icons/svg/2755/2755544.svg" />
 					</div>
 					<InfoCard />
 				</div>

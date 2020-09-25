@@ -7,12 +7,10 @@
 	font-family: "Dosis", sans-serif;
 }
 .ant-layout-header {
-  background: #6f4a8e;
 }
 .logo {
 	width: 120px;
 	height: 31px;
-	background: #5450a8;
 	margin: 16px 24px 16px 0;
 	float: left;
 }
@@ -25,11 +23,11 @@
 	align-items: center;
 /* 	background-image: url("./backRings.gif");
 	background-size: 600px; */
+    margin-bottom: 200px;
 }
 .mainSvg {
 	width: 50%;
 	margin-left: 30%;
-	margin-top: -10%;
 	grid-column: 2;
 	grid-row: 1;
 	justify-self: flex-start;
@@ -74,7 +72,7 @@ h1 {
 	font-weight: 500;
 }
 .ant-card-head {
-	background-color: #6f4a8e;
+	background-color: #5450a8;
 }
 .extraInfo {
 	padding: 5px;

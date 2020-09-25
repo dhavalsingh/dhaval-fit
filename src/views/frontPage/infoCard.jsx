@@ -1,8 +1,6 @@
 import React from "react";
-import { Table, Card, Row, Col, Avatar, Tag } from "antd";
+import { Table, Card, Row, Col, Avatar, Tag, Popover } from "antd";
 import { CalendarOutlined } from "@ant-design/icons";
-
-import { ReactComponent as Bar } from "./barbell.svg";
 
 const { Meta } = Card;
 const columns = [
@@ -99,16 +97,18 @@ const data = [
 		description: "Chicken grilled sandwich",
 	},
 ];
+
 function ExtraInfo({ value, url }) {
 	return (
 		<div className="extraInfo">
-			<Avatar size="large" src={url} />
+				<Avatar size="large" src={url} />
 			<p className="extraText">{value}</p>
 		</div>
 	);
 }
 
 function InfoCard({}) {
+
 	return (
 		<div>
 			<div className="dayTag">
@@ -121,12 +121,7 @@ function InfoCard({}) {
 					title={
 						<Meta
 							className="workCardMeta"
-							avatar={
-								<Avatar
-									size="large"
-									src={require("./food.gif")}
-								/>
-							}
+							avatar={<Avatar size="large" src="https://www.flaticon.com/svg/static/icons/svg/608/608857.svg" />}
 							title={<h3 className="cardTitle"></h3>}
 						/>
 					}
@@ -163,38 +158,32 @@ function InfoCard({}) {
 						</Col>
 						<Col span="6">
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/1656/1656204.svg"
+								url="https://www.flaticon.com/svg/static/icons/svg/1349/1349981.svg"
 								value="1750"
 							/>
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/2149/2149391.svg"
+								url="https://www.flaticon.com/svg/static/icons/svg/32/32523.svg"
 								value="10000"
 							/>
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/809/809120.svg"
+								url="https://www.flaticon.com/svg/static/icons/svg/3017/3017682.svg"
 								value="3.7L"
 							/>
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/3003/3003124.svg"
+								url="https://www.flaticon.com/svg/static/icons/svg/3511/3511106.svg"
 								value="8Hrs"
 							/>
 						</Col>
 					</Row>
 					<Row>
-						<span>Total Caloric Deficit: 300
-						</span>
+						<span>Total Caloric Deficit: 300</span>
 					</Row>
 				</Card>
 				<Card
 					title={
 						<Meta
 							className="workCardMeta"
-							avatar={
-								<Avatar
-									size="large"
-									src={require("./dumbell.gif")}
-								/>
-							}
+							avatar={<Avatar size="large" src={require("./dumbell.gif")} />}
 							title={<h3 className="cardTitle"></h3>}
 						/>
 					}
