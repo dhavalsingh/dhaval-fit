@@ -98,17 +98,39 @@ const data = [
 	},
 ];
 
-function ExtraInfo({ value, url }) {
+function ExtraInfo({ value, url, size }) {
 	return (
 		<div className="extraInfo">
-				<Avatar className="transform" size="large" src={url} />
+			<Avatar className="transform" size={size ? size : "large"} src={url} />
 			<p className="extraText">{value}</p>
 		</div>
 	);
 }
 
 function InfoCard({}) {
+	const popTitle = (
+		<div style={{textAlign:"center"}}>Total Macros</div>
+	)
+	const macros = (
+		<div className="infoPop">
+			<ExtraInfo
+				value="170"
+				url="https://www.flaticon.com/svg/static/icons/svg/780/780118.svg"
+				size="large"
+			/>
+			<ExtraInfo
+				value="60"
+				url="https://www.flaticon.com/svg/static/icons/svg/2599/2599597.svg"
+				size="large"
+			/>
 
+			<ExtraInfo
+				value="170"
+				url="https://www.flaticon.com/svg/static/icons/svg/1276/1276022.svg"
+				size="large"
+			/>
+		</div>
+	);
 	return (
 		<div>
 			<div className="dayTag">
@@ -121,7 +143,13 @@ function InfoCard({}) {
 					title={
 						<Meta
 							className="workCardMeta"
-							avatar={<Avatar className="transform" size="large" src="https://www.flaticon.com/svg/static/icons/svg/608/608857.svg" />}
+							avatar={
+								<Avatar
+									className="transform"
+									size="large"
+									src="https://www.flaticon.com/svg/static/icons/svg/608/608857.svg"
+								/>
+							}
 							title={<h3 className="cardTitle"></h3>}
 						/>
 					}
@@ -129,7 +157,8 @@ function InfoCard({}) {
 					style={{
 						width: "95%",
 						margin: "0 auto",
-						boxShadow: "3px 3px 5px 6px #ccc",
+						borderRadius: "10px",
+						boxShadow: "0 3px 25px rgba(0, 0, 0, 0.1)",
 					}}
 					className="nutCard"
 				>
@@ -156,10 +185,23 @@ function InfoCard({}) {
 								pagination={{ position: ["none", "bottomCenter"] }}
 							/>
 						</Col>
-						<Col span="6">
+						<Col span="6" style={{ justifyContent: "center", display: "grid" }}>
+							<Popover
+								placement="rightTop"
+								content={macros}
+								title={popTitle}
+								trigger="hover"
+							>
+								<div>
+									<ExtraInfo
+										url="https://www.flaticon.com/svg/static/icons/svg/2862/2862227.svg"
+										value="1750 kcal"
+									/>
+								</div>
+							</Popover>
 							<ExtraInfo
 								url="https://www.flaticon.com/svg/static/icons/svg/1349/1349981.svg"
-								value="1750"
+								value="400 kcal"
 							/>
 							<ExtraInfo
 								url="https://www.flaticon.com/svg/static/icons/svg/32/32523.svg"
@@ -175,9 +217,6 @@ function InfoCard({}) {
 							/>
 						</Col>
 					</Row>
-					<Row>
-						<span>Total Caloric Deficit: 300</span>
-					</Row>
 				</Card>
 				<Card
 					title={
@@ -191,7 +230,8 @@ function InfoCard({}) {
 					style={{
 						width: "100%",
 						margin: "0 auto",
-						boxShadow: "3px 3px 5px 6px #ccc",
+						borderRadius: "10px",
+						boxShadow: "0 3px 25px rgba(0, 0, 0, 0.1)",
 					}}
 				>
 					<div className="workCard">

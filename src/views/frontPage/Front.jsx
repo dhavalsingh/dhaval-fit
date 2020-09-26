@@ -62,8 +62,9 @@ function FrontPage() {
 						<h1>60 Days to glory</h1>
 						<div>
 							<img className="mainSvg" src={require("./gym1.gif")} />
-{/* 							<Main className="mainSvg" />
- */}						</div>
+							{/* 							<Main className="mainSvg" />
+							 */}{" "}
+						</div>
 						<div className="site-statistic-demo-card">
 							<Row gutter={16}>
 								<Col span={8}>
@@ -131,13 +132,22 @@ function FrontPage() {
 						}}
 					>
 						<h1>Daily Progress</h1>
-						<img className="goalSvg" src="https://www.flaticon.com/svg/static/icons/svg/2755/2755544.svg" />
+						<img
+							className="goalSvg"
+							src="https://www.flaticon.com/svg/static/icons/svg/2755/2755544.svg"
+						/>
 					</div>
 					<InfoCard />
 				</div>
 			</Content>
-			<Footer style={{ textAlign: "center" }}>
-				Dhaval Singh ©2020 Created by Dhaval Singh
+			<Footer
+				style={{
+					textAlign: "center",
+					fontFamily: "Hoefler Text, Georgia, Garamond, Times, serif",
+					fontSize: "18px",
+				}}
+			>
+				Don't let perfect be the enemy of good.
 			</Footer>
 		</Layout>
 	);
