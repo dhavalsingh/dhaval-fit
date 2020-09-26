@@ -101,7 +101,7 @@ const data = [
 function ExtraInfo({ value, url }) {
 	return (
 		<div className="extraInfo">
-				<Avatar size="large" src={url} />
+				<Avatar className="transform" size="large" src={url} />
 			<p className="extraText">{value}</p>
 		</div>
 	);
@@ -121,7 +121,7 @@ function InfoCard({}) {
 					title={
 						<Meta
 							className="workCardMeta"
-							avatar={<Avatar size="large" src="https://www.flaticon.com/svg/static/icons/svg/608/608857.svg" />}
+							avatar={<Avatar className="transform" size="large" src="https://www.flaticon.com/svg/static/icons/svg/608/608857.svg" />}
 							title={<h3 className="cardTitle"></h3>}
 						/>
 					}
