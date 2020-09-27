@@ -1,0 +1,14 @@
+.blogText{
+    padding-left: 200px;
+    font-size: larger;
+    padding-right: 200px;
+    padding-bottom: 200px;
+}
+.tldrText{
+    background-color: antiquewhite;
+    font-size: medium;
+    font-family: sans-serif;
+}
+p{
+    font-size: larger;
+}

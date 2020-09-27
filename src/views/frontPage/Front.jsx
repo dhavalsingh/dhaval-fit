@@ -204,7 +204,7 @@ function FrontPage() {
 					<InfoCard cardData={cardData[day]} />
 					<BackTop />
 					<div ref={myRef}>
-						<h1 className="sectionHead">NUTRITION</h1>
+						<h1 style={{paddingTop:"100px"}} className="sectionHead">NUTRITION</h1>
 						<Nutrition />
 					</div>
 				</div>
