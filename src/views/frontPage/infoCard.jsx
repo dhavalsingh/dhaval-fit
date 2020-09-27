@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Table, Card, Row, Col, Avatar, Tag, Popover } from "antd";
 import { CalendarOutlined } from "@ant-design/icons";
+import ExtraInfo from "../extraInfo";
+import { InView } from "react-intersection-observer";
 
 const { Meta } = Card;
+
 const columns = [
 	{
 		title: "Meal",
@@ -37,106 +40,41 @@ const column = [
 		key: "set",
 	},
 ];
-const datas = [
-	{
-		key: "1",
-		exe: "Bench Press",
-		rep: "15-12-10",
-		set: "40 KG",
-		description: "Form on last set",
-	},
-	{
-		key: "2",
-		exe: "Bench Press",
-		rep: "15-12-10",
-		set: "40 KG",
-		description: "Form on last set",
-	},
-	{
-		key: "3",
-		exe: "Bench Press",
-		rep: "15-12-10",
-		set: "40 KG",
-		description: "Form on last set",
-	},
-	{
-		key: "4",
-		exe: "Bench Press",
-		rep: "15-12-10",
-		set: "40 KG",
-		description: "Form on last set",
-	},
-];
-const data = [
-	{
-		key: "1",
-		meal: "Breakfast",
-		cal: 400,
-		mac: "30P 42C 18F",
-		description: "Chicken grilled sandwich",
-	},
-	{
-		key: "2",
-		meal: "Lunch",
-		cal: 400,
-		mac: "30P 42C 18F",
-		description: "Chicken grilled sandwich",
-	},
-	{
-		key: "3",
-		meal: "Snack",
-		cal: 400,
-		mac: "30P 42C 18F",
-		description: "Chicken grilled sandwich",
-	},
-	{
-		key: "4",
-		meal: "Dinner",
-		cal: 400,
-		mac: "30P 42C 18F",
-		description: "Chicken grilled sandwich",
-	},
-];
 
-function ExtraInfo({ value, url, size }) {
-	return (
-		<div className="extraInfo">
-			<Avatar className="transform" size={size ? size : "large"} src={url} />
-			<p className="extraText">{value}</p>
-		</div>
-	);
-}
-
-function InfoCard({}) {
-	const popTitle = (
-		<div style={{textAlign:"center"}}>Total Macros</div>
-	)
+function InfoCard({ cardData }) {
+	const [popoverOpen, setPopoverOpen] = useState(false);
+	const popTitle = <div style={{ textAlign: "center" }}>Total Macros</div>;
+	const { extraInfo } = cardData;
 	const macros = (
-		<div className="infoPop">
+		<InView
+			as="div"
+			onChange={(inView, entry) => setPopoverOpen(inView)}
+			className="infoPop"
+		>
 			<ExtraInfo
-				value="170"
-				url="https://www.flaticon.com/svg/static/icons/svg/780/780118.svg"
-				size="large"
+				value={extraInfo.p}
+				postUrl="https://www.flaticon.com/svg/static/icons/svg/3082/3082022.svg"
+				preUrl="https://www.flaticon.com/svg/static/icons/svg/3081/3081928.svg"
 			/>
 			<ExtraInfo
-				value="60"
-				url="https://www.flaticon.com/svg/static/icons/svg/2599/2599597.svg"
-				size="large"
+				value={extraInfo.f}
+				postUrl="https://www.flaticon.com/svg/static/icons/svg/2599/2599612.svg"
+				preUrl="https://www.flaticon.com/svg/static/icons/svg/2599/2599597.svg"
 			/>
-
 			<ExtraInfo
-				value="170"
-				url="https://www.flaticon.com/svg/static/icons/svg/1276/1276022.svg"
-				size="large"
+				value={extraInfo.c}
+				postUrl="https://www.flaticon.com/svg/static/icons/svg/3081/3081918.svg"
+				preUrl="https://www.flaticon.com/svg/static/icons/svg/3081/3081804.svg"
 			/>
-		</div>
+		</InView>
 	);
+
 	return (
 		<div>
 			<div className="dayTag">
-				<Tag icon={<CalendarOutlined />} color="rgb(169 168 212)">
-					Day 1
-				</Tag>
+				{/* 				<Tag icon={<CalendarOutlined />} color="rgb(169 168 212)">
+					{`Day ${cardData.day}`}
+				</Tag> */}
 			</div>
 			<div className="cardCont">
 				<Card
@@ -147,7 +85,7 @@ function InfoCard({}) {
 								<Avatar
 									className="transform"
 									size="large"
-									src="https://www.flaticon.com/svg/static/icons/svg/608/608857.svg"
+									src="https://www.flaticon.com/svg/static/icons/svg/2921/2921855.svg"
 								/>
 							}
 							title={<h3 className="cardTitle"></h3>}
@@ -176,7 +114,7 @@ function InfoCard({}) {
 						<Col span="12">
 							<Table
 								columns={columns}
-								dataSource={data}
+								dataSource={cardData.food}
 								expandable={{
 									expandedRowRender: (record) => (
 										<p style={{ margin: 0 }}>{record.description}</p>
@@ -194,35 +132,51 @@ function InfoCard({}) {
 							>
 								<div>
 									<ExtraInfo
-										url="https://www.flaticon.com/svg/static/icons/svg/2862/2862227.svg"
-										value="1750 kcal"
+										value={extraInfo.intake}
+										postUrl="https://www.flaticon.com/svg/static/icons/svg/2860/2860853.svg"
+										preUrl="https://www.flaticon.com/svg/static/icons/svg/2862/2862227.svg"
+										popoverOpen={popoverOpen}
 									/>
 								</div>
 							</Popover>
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/1349/1349981.svg"
-								value="400 kcal"
+								value={extraInfo.burned}
+								postUrl="https://image.flaticon.com/icons/png/512/1350/1350083.png"
+								preUrl="https://www.flaticon.com/svg/static/icons/svg/1349/1349981.svg"
 							/>
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/32/32523.svg"
-								value="10000"
+								value={extraInfo.steps}
+								postUrl="https://www.flaticon.com/svg/static/icons/svg/2149/2149464.svg"
+								preUrl="https://www.flaticon.com/svg/static/icons/svg/2149/2149109.svg"
 							/>
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/3017/3017682.svg"
-								value="3.7L"
+								value={extraInfo.water}
+								postUrl="https://www.flaticon.com/svg/static/icons/svg/3017/3017715.svg"
+								preUrl="https://www.flaticon.com/svg/static/icons/svg/3017/3017682.svg"
 							/>
 							<ExtraInfo
-								url="https://www.flaticon.com/svg/static/icons/svg/3511/3511106.svg"
-								value="8Hrs"
+								value={extraInfo.sleep}
+								postUrl="https://www.flaticon.com/svg/static/icons/svg/3094/3094845.svg"
+								preUrl="https://www.flaticon.com/svg/static/icons/svg/3094/3094655.svg"
 							/>
 						</Col>
+					</Row>
+					<Row>
+						<div>
+							Date : {cardData.date}
+						</div>
 					</Row>
 				</Card>
 				<Card
 					title={
 						<Meta
 							className="workCardMeta"
-							avatar={<Avatar size="large" src={require("./dumbell.gif")} />}
+							avatar={
+								<Avatar
+									size="large"
+									src="https://www.flaticon.com/svg/static/icons/svg/2936/2936886.svg"
+								/>
+							}
 							title={<h3 className="cardTitle"></h3>}
 						/>
 					}
@@ -237,7 +191,7 @@ function InfoCard({}) {
 					<div className="workCard">
 						<Table
 							columns={column}
-							dataSource={datas}
+							dataSource={cardData.gym}
 							expandable={{
 								expandedRowRender: (record) => (
 									<p style={{ margin: 0 }}>{record.description}</p>

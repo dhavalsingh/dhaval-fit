@@ -1,46 +1,60 @@
-import React from "react";
-import { Layout, Menu, Carousel, Card, Row, Col, Statistic } from "antd";
+import React, { useRef } from "react";
+import {
+	Layout,
+	Menu,
+	Carousel,
+	Card,
+	Row,
+	Col,
+	Statistic,
+	Progress,
+	Button,
+	Tooltip,
+	Anchor,
+	BackTop,
+} from "antd";
 import { Line } from "@ant-design/charts";
 import {
 	ArrowUpOutlined,
 	ArrowDownOutlined,
 	VerticalAlignMiddleOutlined,
+	RightCircleFilled,
+	LeftCircleFilled,
 } from "@ant-design/icons";
-import { ReactComponent as Main } from "./main.svg";
-import { ReactComponent as Goal } from "./goal.svg";
 import InfoCard from "./infoCard";
+import { config } from "../../data/weight";
+import { cardData } from "../../data/cardData";
+import Nutrition from "../nutrition";
 import "./styles.css";
+import { useState } from "react";
 
 const { Header, Content, Footer } = Layout;
 const { Meta } = Card;
+const { Link } = Anchor;
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 function FrontPage() {
+	const myRef = useRef(null);
+	const executeScroll = () => scrollToRef(myRef);
+	const today = cardData.length - 1;
+	const [day, setDay] = useState(today);
+	const [flip, setFlip] = useState(false);
 	const contentStyle = {
 		color: "#fff",
 		lineHeight: "160px",
 		textAlign: "center",
 		background: "white",
 	};
-	const data = [
-		{ year: "1991", value: 3 },
-		{ year: "1992", value: 4 },
-		{ year: "1993", value: 3.5 },
-		{ year: "1994", value: 5 },
-		{ year: "1995", value: 4.9 },
-		{ year: "1996", value: 6 },
-		{ year: "1997", value: 7 },
-		{ year: "1998", value: 9 },
-		{ year: "1999", value: 13 },
-	];
-	const config = {
-		data,
-		title: {
-			visible: true,
-			text: "Weight Loss Curve",
-		},
-		xField: "year",
-		yField: "value",
+	const flipAnimation = {
+		transformOrigin: "50% -1.5%",
+		animation: `${flip ? "flip 1s infinite linear" : ""}`,
 	};
+
+	function flipCal() {
+		setFlip(true);
+		setTimeout(() => setFlip(false), 1000);
+	}
+
 	return (
 		<Layout className="layout">
 			<Header>
@@ -52,18 +66,33 @@ function FrontPage() {
 					defaultSelectedKeys={["1"]}
 				>
 					<Menu.Item key="1">Dashboard</Menu.Item>
-					<Menu.Item key="2">Nutrition</Menu.Item>
+					<Menu.Item key="2" onClick={executeScroll}>
+						Nutrition
+					</Menu.Item>
 					<Menu.Item key="3">Workout</Menu.Item>
 				</Menu>
 			</Header>
 			<Content>
 				<div className="site-layout-content">
 					<div className="header">
-						<h1>60 Days to glory</h1>
+						<div>
+							<h2>60 Days To</h2>
+							<div style={{ display: "flex", marginTop: "-40px" }}>
+								<h2 style={{ padding: "0px" }}>Gl</h2>{" "}
+								<Progress
+									type="circle"
+									trailColor="grey"
+									strokeColor="#5450a8"
+									percent={28}
+									format={(percent) => `Day ${percent}`}
+									width={90}
+								/>
+								<h2 style={{ padding: "0px 30px 10px 10px" }}>ry</h2>
+							</div>
+						</div>
+
 						<div>
 							<img className="mainSvg" src={require("./gym1.gif")} />
-							{/* 							<Main className="mainSvg" />
-							 */}{" "}
 						</div>
 						<div className="site-statistic-demo-card">
 							<Row gutter={16}>
@@ -83,7 +112,7 @@ function FrontPage() {
 									<Card>
 										<Statistic
 											title="Current"
-											value={77.8}
+											value={76.9}
 											precision={1}
 											valueStyle={{ color: "#5450a9" }}
 											prefix={<VerticalAlignMiddleOutlined />}
@@ -123,21 +152,61 @@ function FrontPage() {
 							<h3 style={contentStyle}>4</h3>
 						</div>
 					</Carousel>
-					<div
-						style={{
-							textAlign: "center",
-							marginTop: "25px",
-							display: "flex",
-							justifyContent: "center",
-						}}
-					>
+					<div className="sectionHead">
 						<h1>Daily Progress</h1>
-						<img
+						{/* <img
 							className="goalSvg"
 							src="https://www.flaticon.com/svg/static/icons/svg/2755/2755544.svg"
-						/>
+						/> */}
 					</div>
-					<InfoCard />
+					<div className="cardNav">
+						<Tooltip placement="left" title="Go to previous day">
+							<Button
+								style={{ marginRight: "90px" }}
+								type="text"
+								onClick={() => {
+									flipCal();
+									setDay(day - 1);
+								}}
+								disabled={day === 0}
+								icon={<LeftCircleFilled />}
+							></Button>
+						</Tooltip>
+
+						<Tooltip placement="top" title="Go to today">
+							<Button
+								onClick={() => {
+									flipCal();
+									setDay(today);
+								}}
+								type="link"
+							>
+								<div class="icon calendar">
+									<i></i>
+									<i style={flipAnimation}>{/* {day} */}</i>
+								</div>
+							</Button>
+						</Tooltip>
+						<Tooltip placement="right" title="Go to next day">
+							<Button
+								style={{ marginLeft: "90px" }}
+								type="text"
+								onClick={() => {
+									flipCal();
+									setDay(day + 1);
+								}}
+								disabled={day === today}
+								icon={<RightCircleFilled />}
+							></Button>
+						</Tooltip>
+					</div>
+
+					<InfoCard cardData={cardData[day]} />
+					<BackTop />
+					<div ref={myRef}>
+						<h1 className="sectionHead">NUTRITION</h1>
+						<Nutrition />
+					</div>
 				</div>
 			</Content>
 			<Footer

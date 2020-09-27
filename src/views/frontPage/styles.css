@@ -6,8 +6,7 @@
 	min-height: 280px;
 	font-family: "Dosis", sans-serif;
 }
-.ant-layout-header {
-}
+
 .logo {
 	width: 120px;
 	height: 31px;
@@ -34,6 +33,15 @@
 	margin-left: -2%;
 }
 h1 {
+	font: 500 5rem/1 "Dosis";
+	text-transform: uppercase;
+	color: #5450a9;
+	font-family: "Dosis", sans-serif;
+	@media (min-width: 850px) {
+		font: 700 4.8rem/1 "Dosis";
+	}
+}
+h2{
 	font: 500 5rem/1 "Dosis";
 	text-transform: uppercase;
 	color: #5450a9;
@@ -74,19 +82,7 @@ h1 {
 .ant-card-head {
 	background-color: #5450a8;
 }
-.extraInfo {
-	margin: 10px;
-	justify-content: center;
-	align-items: center;
-}
-.extraText {
-	font-size: large;
-	color: #5450a9;
-	font-family: "Dosis", sans-serif;
-  font-weight: 500;
-  margin-bottom: 5px;
-  margin-left: 20px;
-}
+
 .dayTag{
   padding: 5px;
 	margin: 10px;
@@ -97,47 +93,113 @@ h1 {
 .site-statistic-demo-card {
   padding: 10px;
 }
-/* .nutCard {
-	background-image: url("./backRings.gif");
-} */
 
-@keyframes bounce {
-	0%, 100%, 20%, 50%, 80% {
-		-webkit-transform: translateY(0);
-		-ms-transform:     translateY(0);
-		transform:         translateY(0)
-	}
-	40% {
-		-webkit-transform: translateY(-30px);
-		-ms-transform:     translateY(-30px);
-		transform:         translateY(-30px)
-	}
-	60% {
-		-webkit-transform: translateY(-15px);
-		-ms-transform:     translateY(-15px);
-		transform:         translateY(-15px)
-	}
-}
 .infoPop{
 	justify-content: center;
     display: grid;
 }
-.transform {  
-  line-height: 180px;
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  color: white;
+
+.stepsIcon {
+	width: 50px;
+    height: 50px;
+	background-image: url("https://www.flaticon.com/svg/static/icons/svg/1022/1022371.svg");
+	background-size: cover;
+	transition-duration: 2s;
 }
-.transform:hover {
-  cursor: pointer;
-  animation-name: bounce;
-  -moz-animation-name: bounce;
+.stepsIcon:hover{
+	background-image: url("https://www.flaticon.com/svg/static/icons/svg/1022/1022320.svg");
 }
+
+.cardNav {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+}
+
+  .icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 16em;
+	height: 16em;
+	transform: translate(-50%,-50%);
+  }
+  
+  /* Calendar */
+  
+  .calendar {
+	perspective: 40em;
+	color: #12395F;
+  }
+  
+  .calendar i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 6em;
+	height: 6em;
+	transform: translate(-50%,-50%);
+	color: inherit;
+	background-color: #FFF;
+	border: 0.25em solid;
+	background-image:
+	  linear-gradient(to bottom, currentColor 10%, rgba(255,255,255,0) 10%),
+	  linear-gradient(to left, currentColor 10%, rgba(255,255,255,0) 10%);
+	background-size: 1.25em;
+	background-position: -0.0625em -0.1875em;
+	border-radius: 0.1875em;
+	box-shadow: inset 0 1.0625em #F78D72;
+  }
+  
+/*    .calendar i:last-child {
+	transform-origin: 50% -1.5%;
+	animation: flip 1.35s infinite linear;
+  }  */
+  
+   .calendar i:before {
+	content: '';
+	position: absolute;
+	top: 2.4375em;
+	left: 3.6875em;
+	display: block;
+	width: 1.125em;
+	height: 1.125em;
+	background-color: #FFDEA3;
+  } 
+  
+  .calendar:before {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 50%;
+	width: 0.25em;
+	height: 1.5625em;
+	margin: 3.9375em 0 0 -1.875em;
+	transform: translate(-50%,0);
+	transform-origin: 0 0;
+	color: inherit;
+	background-color: currentColor;
+	border-radius: 0.1875em;
+	box-shadow: 3.75em 0 currentColor;
+  }
+  
+  @keyframes flip {
+	0%, 62% { transform: translate(-50%,-50%) rotateX(0) scaleY(1); }
+	100% { transform: translate(-50%,-50%) rotateX(265deg) scaleY(0.5); }
+  }
+  
+  @keyframes mask {
+	63% { transform: translate(-50%,0%); }
+	74% { transform: translate(-50%,0%) scaleY(0.5); }
+	74.1% { transform: translate(-50%,0%) scaleY(1); }
+  }
+  
+  .sectionHead {
+	text-align: center;
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+  }
