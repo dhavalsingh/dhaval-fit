@@ -34,8 +34,13 @@ const { Link } = Anchor;
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 function FrontPage() {
-	const myRef = useRef(null);
-	const executeScroll = () => scrollToRef(myRef);
+	const myNut = useRef(null);
+	const myNut1 = useRef(null);
+	const refCico = useRef(null);
+	const executeScroll = () => scrollToRef(myNut);
+	const executeScroll1 = () => scrollToRef(myNut1);
+	const executeScrollCico = () => scrollToRef(refCico);
+
 	const today = cardData.length - 1;
 	const [day, setDay] = useState(today);
 	const [flip, setFlip] = useState(false);
@@ -57,21 +62,32 @@ function FrontPage() {
 
 	return (
 		<Layout className="layout">
-			<Header>
-				<div className="logo" />
-				<Menu
-					theme="dark"
-					className="nav"
-					mode="horizontal"
-					defaultSelectedKeys={["1"]}
-				>
-					<Menu.Item key="1">Dashboard</Menu.Item>
-					<Menu.Item key="2" onClick={executeScroll}>
-						Nutrition
-					</Menu.Item>
-					<Menu.Item key="3">Workout</Menu.Item>
-				</Menu>
-			</Header>
+			<div>
+				<ul id="menu">
+					<li>
+						<a href="#">Dashboard</a>
+					</li>
+					<li>
+						<a href="#" onClick={executeScroll} >Nutrition</a>
+						<ul>
+							<li>
+								<a href="#" onClick={executeScroll1}>First Steps</a>
+							</li>
+							<li>
+								<a href="#" onClick={executeScrollCico}>CICO</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Workout</a>
+						<ul></ul>
+					</li>
+					<li>
+						<a href="#">About Me</a>
+						<ul></ul>
+					</li>
+				</ul>
+			</div>
 			<Content>
 				<div className="site-layout-content">
 					<div className="header">
@@ -203,9 +219,14 @@ function FrontPage() {
 
 					<InfoCard cardData={cardData[day]} />
 					<BackTop />
-					<div ref={myRef}>
-						<h1 style={{paddingTop:"100px"}} className="sectionHead">NUTRITION</h1>
-						<Nutrition />
+					<div ref={myNut}>
+						<h1
+							style={{ paddingTop: "100px", paddingBottom: "80px" }}
+							className="sectionHead"
+						>
+							NUTRITION
+						</h1>
+						<Nutrition refBasic={myNut1} refCico={refCico} />
 					</div>
 				</div>
 			</Content>
@@ -214,6 +235,7 @@ function FrontPage() {
 					textAlign: "center",
 					fontFamily: "Hoefler Text, Georgia, Garamond, Times, serif",
 					fontSize: "18px",
+					backgroundColor:"#ccc",
 				}}
 			>
 				Don't let perfect be the enemy of good.

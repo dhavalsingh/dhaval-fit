@@ -1,9 +1,12 @@
 import React from "react";
-import { Tabs } from "antd";
+import { Tabs, Collapse } from "antd";
+import Tdee from "../../components/tdee";
 import "./style.css";
 
 const { TabPane } = Tabs;
-function Nutrition() {
+const { Panel } = Collapse;
+
+function Nutrition({ refBasic, refCico }) {
 	return (
 		<div className="blogText">
 			<p>Before we start, why should you trust me?</p>
@@ -15,14 +18,50 @@ function Nutrition() {
 				on your own.
 			</p>
 			<p>That being said, let's begin!</p>
+			<h3 ref={refBasic}>First Steps:</h3>
 			<p>
 				As a begginer there are only 2 things to keep in mind when it comes to
 				Nutrition.
 			</p>
-			<ul>
-				<li>Consistency is the key</li>
-				<li>Keep it simple stupid</li>
-			</ul>
+			<div style={{ paddingBottom: "20px" }}>
+				<Collapse
+					accordion
+					bordered={false}
+					className="site-collapse-custom-collapse"
+				>
+					<Panel
+						header="Consistency is the key"
+						key="1"
+						className="site-collapse-custom-panel"
+					>
+						<p>
+							This is one of the most important and easily the hardest things.
+							But you gotta do it everyday, there is no point following a yo-yo
+							diet. As someone rightly said
+						</p>
+						<p>
+							"Screw Motivation, What you need is Discipline. Motivation is
+							fleeting, inconsistent. Discipline is permanent, in control."
+						</p>
+					</Panel>
+					<Panel
+						header="The KISS Principle"
+						key="2"
+						className="site-collapse-custom-panel"
+					>
+						<a href="https://en.wikipedia.org/wiki/KISS_principle">
+							Keep it simple, stupid &nbsp;
+						</a>
+						<p>
+							To stay consistent, you have to keep it simple. Create habits
+							which you can follow for a long time. The sooner you realise this,
+							the eaiser it is for you. Dont set yourself for failure by setting
+							the bar too high in the first place itself.
+						</p>
+					</Panel>
+				</Collapse>
+			</div>
+
 			<p>Keeping that in mind, the 3 most basic habbits to tackle first are</p>
 			<Tabs defaultActiveKey="1">
 				<TabPane tab="Sleep" key="1">
@@ -65,7 +104,7 @@ function Nutrition() {
 						<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4077693/">
 							Research &nbsp;
 						</a>
-						 has shown we usually associate few kinds of food to the activity we
+						has shown we usually associate few kinds of food to the activity we
 						are doing. For example, I always ate chips or fried stuff while
 						watching movies/Tv shows. Unconsiously I had associated eating those
 						things with watching something, it was much easier to keep it in
@@ -75,6 +114,30 @@ function Nutrition() {
 					</p>
 				</TabPane>
 			</Tabs>
+			<p>
+				Once you have these simple habits down, its time to calculate a bit.
+			</p>
+			<h3 ref={refCico}>CICO:</h3>
+			<p>
+				Losing weight is a very simple science, eat less than what your body
+				needs and the scale will go down. To know how many calories your body
+				needs, you need to calculate your &nbsp;
+				<a href="https://tdeecalculator.net/">
+					TDEE(total daily energy expenditure).
+				</a>
+			</p>
+			<p>
+				CICO stands for "calories in, calories out". Now that you have your
+				calories out calculated, you need to know your calories in.
+			</p>
+			<Tabs defaultActiveKey="1">
+				<TabPane tab="Logging" key="1">
+					<p>You need to start loggin anything that goes in your mouth</p>
+				</TabPane>
+				<TabPane tab="Eat Simple" key="2"></TabPane>
+				<TabPane tab="Use a Food Scale" key="3"></TabPane>
+			</Tabs>
+			<Tdee />
 		</div>
 	);
 }
