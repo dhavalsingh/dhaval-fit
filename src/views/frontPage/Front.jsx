@@ -22,6 +22,7 @@ import {
 	LeftCircleFilled,
 } from "@ant-design/icons";
 import InfoCard from "./infoCard";
+import TotalStats from "../totalStats";
 import { config } from "../../data/weight";
 import { cardData } from "../../data/cardData";
 import Nutrition from "../nutrition";
@@ -45,10 +46,10 @@ function FrontPage() {
 	const [day, setDay] = useState(today);
 	const [flip, setFlip] = useState(false);
 	const contentStyle = {
-		color: "#fff",
+		color: "purple",
 		lineHeight: "160px",
 		textAlign: "center",
-		background: "white",
+		background: "#f5f5ff",
 	};
 	const flipAnimation = {
 		transformOrigin: "50% -1.5%",
@@ -159,7 +160,9 @@ function FrontPage() {
 							</h3>
 						</div>
 						<div>
-							<h3 style={contentStyle}>2</h3>
+							<h3 style={contentStyle}>
+								<TotalStats />
+							</h3>
 						</div>
 						<div>
 							<h3 style={contentStyle}>3</h3>

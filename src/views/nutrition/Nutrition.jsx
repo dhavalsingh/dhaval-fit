@@ -131,8 +131,8 @@ function Nutrition({ refBasic, refCico }) {
 				calories out calculated, you need to know your calories in.
 			</p>
 			<Tabs defaultActiveKey="1">
-				<TabPane tab="Logging" key="1">
-					<p>You need to start loggin anything that goes in your mouth</p>
+				<TabPane tab="Tracking" key="1">
+					<p>You need to start logging anything that goes in your mouth</p>
 				</TabPane>
 				<TabPane tab="Eat Simple" key="2"></TabPane>
 				<TabPane tab="Use a Food Scale" key="3"></TabPane>
