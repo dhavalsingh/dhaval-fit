@@ -95,7 +95,9 @@ function FrontPage() {
 						</ul>
 					</li>
 					<li>
-						<a href="#" onClick={executeScrollWork}>Workout</a>
+						<a href="#" onClick={executeScrollWork}>
+							Workout
+						</a>
 						<ul>
 							<li>
 								<a href="#">Basics</a>
@@ -109,10 +111,14 @@ function FrontPage() {
 						</ul>
 					</li>
 					<li>
-						<a href="#" onClick={executeScrollDeets}>This Project</a>
+						<a href="#" onClick={executeScrollDeets}>
+							This Project
+						</a>
 					</li>
 					<li>
-						<a href="#" onClick={executeScrollAboutMe}>About Me</a>
+						<a href="#" onClick={executeScrollAboutMe}>
+							About Me
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -139,51 +145,50 @@ function FrontPage() {
 							<img className="mainSvg" src={require("./gym1.gif")} />
 						</div>
 						<div>
-						<div className="site-statistic-demo-card">
-							<Row gutter={16}>
-								<Col span={8}>
-									<Card>
-										<Statistic
-											title="Start"
-											value={84.4}
-											precision={1}
-											valueStyle={{ color: "#3f8600" }}
-											prefix={<ArrowUpOutlined />}
-											suffix="Kg"
-										/>
-									</Card>
-								</Col>
-								<Col span={8}>
-									<Card>
-										<Statistic
-											title="Current"
-											value={77.7}
-											precision={1}
-											valueStyle={{ color: "#5450a9" }}
-											prefix={<VerticalAlignMiddleOutlined />}
-											suffix="Kg"
-										/>
-									</Card>
-								</Col>
-								<Col span={8}>
-									<Card>
-										<Statistic
-											title="Goal"
-											value={69}
-											precision={1}
-											valueStyle={{ color: "#cf1322" }}
-											prefix={<ArrowDownOutlined />}
-											suffix="Kg"
-										/>
-									</Card>
-								</Col>
-							</Row>
+							<div className="site-statistic-demo-card">
+								<Row gutter={16}>
+									<Col span={8}>
+										<Card>
+											<Statistic
+												title="Start"
+												value={84.4}
+												precision={1}
+												valueStyle={{ color: "#3f8600" }}
+												prefix={<ArrowUpOutlined />}
+												suffix="Kg"
+											/>
+										</Card>
+									</Col>
+									<Col span={8}>
+										<Card>
+											<Statistic
+												title="Current"
+												value={77.7}
+												precision={1}
+												valueStyle={{ color: "#5450a9" }}
+												prefix={<VerticalAlignMiddleOutlined />}
+												suffix="Kg"
+											/>
+										</Card>
+									</Col>
+									<Col span={8}>
+										<Card>
+											<Statistic
+												title="Goal"
+												value={69}
+												precision={1}
+												valueStyle={{ color: "#cf1322" }}
+												prefix={<ArrowDownOutlined />}
+												suffix="Kg"
+											/>
+										</Card>
+									</Col>
+								</Row>
+							</div>
+							<div>
+								<TotalStats />
+							</div>
 						</div>
-						<div>
-							<TotalStats />
-						</div>
-						</div>
-						
 					</div>
 
 					<Carousel style={{ marginTop: "-10%" }} effect="fade">
@@ -232,7 +237,7 @@ function FrontPage() {
 								}}
 								type="link"
 							>
-								<div class="icon calendar">
+								<div className="icon calendar">
 									<i></i>
 									<i style={flipAnimation}>{/* {day} */}</i>
 								</div>
@@ -270,7 +275,7 @@ function FrontPage() {
 						>
 							WORKOUT
 						</h1>
-						<Workout  />
+						<Workout />
 					</div>
 					<div ref={projDeet}>
 						<h1

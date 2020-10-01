@@ -20,26 +20,27 @@ function ProjectDeets({}) {
 				</a>
 				is a 75-day challenge designed to cultivate mental toughness, created by
 				Andy Frisella of the MFCEO/REAL AF Podcasts. The Rules
-				<ul>
-					<li>
-						Follow a diet: This can be the diet of your choice, but it must be a
-						structured plan designed with a physical improvement in mind. No
-						cheat meals.
-					</li>
-					<li>No alcohol. </li>
-					<li>
-						Two 45-min workout a day: One must be outside. They must be
-						non-consecutive.
-					</li>
-					<li>Drink 1 gallon (3.8L) of water.</li>
-					<li>
-						Read 10 pages of a non-fiction, self-improvement or business book:
-						Must be a physical book. Audiobooks do not count.
-					</li>
-					<li>Take a progress picture every day.</li>
-				</ul>
-				(If you fail to do any of the above, you restart at Day 1.)
 			</p>
+			<ul>
+				<li>
+					Follow a diet: This can be the diet of your choice, but it must be a
+					structured plan designed with a physical improvement in mind. No cheat
+					meals.
+				</li>
+				<li>No alcohol. </li>
+				<li>
+					Two 45-min workout a day: One must be outside. They must be
+					non-consecutive.
+				</li>
+				<li>Drink 1 gallon (3.8L) of water.</li>
+				<li>
+					Read 10 pages of a non-fiction, self-improvement or business book:
+					Must be a physical book. Audiobooks do not count.
+				</li>
+				<li>Take a progress picture every day.</li>
+			</ul>
+			(If you fail to do any of the above, you restart at Day 1.)
+			<p></p>
 			<h3>About The Blog</h3>
 			<p>
 				Over the past few years i have become increasingly intersted in
