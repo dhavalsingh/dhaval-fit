@@ -1,7 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef } from "react";
 import {
 	Layout,
-	Menu,
 	Carousel,
 	Card,
 	Row,
@@ -10,9 +10,8 @@ import {
 	Progress,
 	Button,
 	Tooltip,
-	Anchor,
-	BackTop,
-} from "antd";
+} from /* 	BackTop,
+ */ "antd";
 import { Line } from "@ant-design/charts";
 import {
 	ArrowUpOutlined,
@@ -32,9 +31,7 @@ import About from "../aboutMe";
 import "./styles.css";
 import { useState } from "react";
 
-const { Header, Content, Footer } = Layout;
-const { Meta } = Card;
-const { Link } = Anchor;
+const { Content, Footer } = Layout;
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 function FrontPage() {
@@ -142,7 +139,7 @@ function FrontPage() {
 						</div>
 
 						<div>
-							<img className="mainSvg" src={require("./gym1.gif")} />
+							<img alt="gym" className="mainSvg" src={require("./gym1.gif")} />
 						</div>
 						<div>
 							<div className="site-statistic-demo-card">
@@ -190,24 +187,13 @@ function FrontPage() {
 							</div>
 						</div>
 					</div>
-
 					<Carousel style={{ marginTop: "-10%" }} effect="fade">
 						<div>
 							<h3 style={contentStyle}>
 								<Line {...config} />
 							</h3>
 						</div>
-						<div>
-							<h3 style={contentStyle}></h3>
-						</div>
-						<div>
-							<h3 style={contentStyle}>3</h3>
-						</div>
-						<div>
-							<h3 style={contentStyle}>4</h3>
-						</div>
 					</Carousel>
-
 					<div className="sectionHead">
 						<h1>Daily Progress</h1>
 						{/* <img
@@ -256,9 +242,9 @@ function FrontPage() {
 							></Button>
 						</Tooltip>
 					</div>
-
 					<InfoCard cardData={cardData[day]} />
-					<BackTop />
+					{/* 					<BackTop />
+					 */}{" "}
 					<div ref={myNut}>
 						<h1
 							style={{ paddingTop: "100px", paddingBottom: "80px" }}

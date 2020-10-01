@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Table, Card, Row, Col, Avatar, Tag, Popover } from "antd";
-import { CalendarOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
+import { Table, Card, Row, Col, Avatar, Popover } from "antd";
 import ExtraInfo from "../extraInfo";
 import { InView } from "react-intersection-observer";
 
@@ -88,7 +87,6 @@ function InfoCard({ cardData }) {
 									src="https://www.flaticon.com/svg/static/icons/svg/2921/2921855.svg"
 								/>
 							}
-							title={<h3 className="cardTitle"></h3>}
 						/>
 					}
 					bordered={false}
@@ -103,6 +101,7 @@ function InfoCard({ cardData }) {
 					<Row>
 						<Col span="6">
 							<img
+								alt="img"
 								style={{
 									objectFit: "contain",
 									maxWidth: "200px",
@@ -162,9 +161,7 @@ function InfoCard({ cardData }) {
 						</Col>
 					</Row>
 					<Row>
-						<div>
-							Date : {cardData.date}
-						</div>
+						<div>Date : {cardData.date}</div>
 					</Row>
 				</Card>
 				<Card
@@ -177,7 +174,6 @@ function InfoCard({ cardData }) {
 									src="https://www.flaticon.com/svg/static/icons/svg/2936/2936886.svg"
 								/>
 							}
-							title={<h3 className="cardTitle"></h3>}
 						/>
 					}
 					bordered={false}

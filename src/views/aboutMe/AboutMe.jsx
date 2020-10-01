@@ -1,5 +1,4 @@
 import React from "react";
-import { Tabs, Collapse } from "antd";
 import {
 	InstagramOutlined,
 	FacebookOutlined,
@@ -8,9 +7,7 @@ import {
 	LinkedinOutlined,
 } from "@ant-design/icons";
 import "./styles.css";
-const { TabPane } = Tabs;
-const { Panel } = Collapse;
-function About({}) {
+function About() {
 	return (
 		<div className="blogText">
 			<p>
@@ -22,7 +19,7 @@ function About({}) {
 				I am a software developer by day in India. Feel free to contact me for
 				any further information.
 			</p>
-			<h3 style={{marginTop: "50px"}}>Contact Me</h3>
+			<h3 style={{ marginTop: "50px" }}>Contact Me</h3>
 			<div style={{ display: "flex", justifyContent: "space-between" }}>
 				<a href="https://www.instagram.com/_dhaval._/?hl=en">
 					<InstagramOutlined className="contactIcons" />
@@ -30,7 +27,7 @@ function About({}) {
 				<a href="https://www.facebook.com/dhaval.singh12">
 					<FacebookOutlined className="contactIcons" />
 				</a>
-				<a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=dhavalsingh19@gmail.com">
+				<a href="dhavalsingh19@gmail.com">
 					<GoogleOutlined className="contactIcons" />
 				</a>
 				<a href="https://github.com/dhavalsingh">

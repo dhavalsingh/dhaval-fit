@@ -1,9 +1,6 @@
 import React from "react";
-import { Tabs, Collapse } from "antd";
 
-const { TabPane } = Tabs;
-const { Panel } = Collapse;
-function ProjectDeets({}) {
+function ProjectDeets() {
 	return (
 		<div className="blogText">
 			<h3>About This Dashboard</h3>
