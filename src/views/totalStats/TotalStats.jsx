@@ -8,6 +8,12 @@ import {
 } from "@ant-design/icons";
 
 function TotalStats() {
+	const stats = {
+		time: "192",
+		workouts: "2",
+		steps: "17427",
+		pages: "10",
+	};
 	return (
 		<div className="site-statistic-demo-card">
 			<Row gutter={16}>
@@ -15,7 +21,7 @@ function TotalStats() {
 					<Card className="statsSecond">
 						<Statistic
 							title="Workouts"
-							value={1}
+							value={stats.workouts}
 							precision={0}
 							valueStyle={{ color: "#3f8600" }}
 							prefix={<ThunderboltOutlined />}
@@ -27,7 +33,7 @@ function TotalStats() {
 					<Card className="statsSecond">
 						<Statistic
 							title="Minutes spent exercising"
-							value={90}
+							value={stats.time}
 							precision={0}
 							valueStyle={{ color: "#3f8600" }}
 							prefix={<ClockCircleOutlined />}
@@ -39,7 +45,7 @@ function TotalStats() {
 					<Card className="statsSecond">
 						<Statistic
 							title="Steps taken"
-							value={5000}
+							value={stats.steps}
 							precision={0}
 							valueStyle={{ color: "#3f8600" }}
 							prefix={<QqOutlined />}
@@ -51,7 +57,7 @@ function TotalStats() {
 					<Card className="statsSecond">
 						<Statistic
 							title="Pages Read"
-							value={100}
+							value={stats.pages}
 							precision={0}
 							valueStyle={{ color: "#3f8600" }}
 							prefix={<BookOutlined />}

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef } from "react";
 import {
 	Layout,
@@ -10,8 +9,8 @@ import {
 	Progress,
 	Button,
 	Tooltip,
-} from /* 	BackTop,
- */ "antd";
+	BackTop,
+} from "antd";
 import { Line } from "@ant-design/charts";
 import {
 	ArrowUpOutlined,
@@ -243,8 +242,6 @@ function FrontPage() {
 						</Tooltip>
 					</div>
 					<InfoCard cardData={cardData[day]} />
-					{/* 					<BackTop />
-					 */}{" "}
 					<div ref={myNut}>
 						<h1
 							style={{ paddingTop: "100px", paddingBottom: "80px" }}
@@ -272,6 +269,7 @@ function FrontPage() {
 						</h1>
 						<ProjectDeets />
 					</div>
+					<BackTop />
 					<div ref={aboutMe}>
 						<h1
 							style={{ paddingTop: "1px", paddingBottom: "80px" }}
