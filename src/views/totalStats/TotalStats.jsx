@@ -1,5 +1,6 @@
 import React from "react";
-import { Card } from "antd";
+import { Statistic, Card, Row, Col } from 'antd';
+import { ThunderboltOutlined, ClockCircleOutlined, QqOutlined, BookOutlined } from '@ant-design/icons';
 import CountUp from "react-countup";
 import { InView } from "react-intersection-observer";
 import { useState } from "react";
@@ -13,7 +14,7 @@ function TotalStats() {
 	}); */
 	const [flag, setFlag] = useState(false);
 	return (
-		<div style={{ color: "black" }}>
+/* 		<div>
 			<Card title="Small size card" style={{ width: "100%" }}>
 				<div>
 					<CountUp
@@ -34,8 +35,61 @@ function TotalStats() {
 						)}
 					</CountUp>
 				</div>
+			</Card> 
+
+		</div> */
+		<div className="site-statistic-demo-card">
+		<Row gutter={16}>
+		  <Col span={6}>
+			<Card className="statsSecond" >
+			  <Statistic
+				title="Workouts"
+				value={1}
+				precision={0}
+				valueStyle={{ color: '#3f8600' }}
+				prefix={<ThunderboltOutlined />}
+				suffix=""
+			  />
 			</Card>
-		</div>
+		  </Col>
+		  <Col span={6}>
+			<Card className="statsSecond">
+			  <Statistic
+				title="Minutes spent exercising"
+				value={90}
+				precision={0}
+				valueStyle={{ color: '#3f8600' }}
+				prefix={<ClockCircleOutlined />}
+				suffix=""
+			  />
+			</Card>
+		  </Col>
+		  <Col span={6}>
+			<Card className="statsSecond">
+			  <Statistic
+				title="Steps taken"
+				value={5000}
+				precision={0}
+				valueStyle={{ color: '#3f8600' }}
+				prefix={<QqOutlined />}
+				suffix=""
+			  />
+			</Card>
+		  </Col>
+		  <Col span={6}>
+			<Card className="statsSecond">
+			  <Statistic
+				title="Pages Read"
+				value={100}
+				precision={0}
+				valueStyle={{ color: '#3f8600' }}
+				prefix={<BookOutlined />}
+				suffix=""
+			  />
+			</Card>
+		  </Col>
+		</Row>
+	  </div>
 	);
 }
 export default TotalStats;

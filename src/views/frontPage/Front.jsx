@@ -26,6 +26,9 @@ import TotalStats from "../totalStats";
 import { config } from "../../data/weight";
 import { cardData } from "../../data/cardData";
 import Nutrition from "../nutrition";
+import Workout from "../workout";
+import ProjectDeets from "../projectDetail";
+import About from "../aboutMe";
 import "./styles.css";
 import { useState } from "react";
 
@@ -38,9 +41,15 @@ function FrontPage() {
 	const myNut = useRef(null);
 	const myNut1 = useRef(null);
 	const refCico = useRef(null);
+	const myWork = useRef(null);
+	const projDeet = useRef(null);
+	const aboutMe = useRef(null);
 	const executeScroll = () => scrollToRef(myNut);
 	const executeScroll1 = () => scrollToRef(myNut1);
 	const executeScrollCico = () => scrollToRef(refCico);
+	const executeScrollWork = () => scrollToRef(myWork);
+	const executeScrollDeets = () => scrollToRef(projDeet);
+	const executeScrollAboutMe = () => scrollToRef(aboutMe);
 
 	const today = cardData.length - 1;
 	const [day, setDay] = useState(today);
@@ -69,23 +78,41 @@ function FrontPage() {
 						<a href="#">Dashboard</a>
 					</li>
 					<li>
-						<a href="#" onClick={executeScroll} >Nutrition</a>
+						<a href="#" onClick={executeScroll}>
+							Nutrition
+						</a>
 						<ul>
 							<li>
-								<a href="#" onClick={executeScroll1}>First Steps</a>
+								<a href="#" onClick={executeScroll1}>
+									First Steps
+								</a>
 							</li>
 							<li>
-								<a href="#" onClick={executeScrollCico}>CICO</a>
+								<a href="#" onClick={executeScrollCico}>
+									CICO
+								</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#">Workout</a>
-						<ul></ul>
+						<a href="#" onClick={executeScrollWork}>Workout</a>
+						<ul>
+							<li>
+								<a href="#">Basics</a>
+							</li>
+							<li>
+								<a href="#">Cardio</a>
+							</li>
+							<li>
+								<a href="#">Resistance training</a>
+							</li>
+						</ul>
 					</li>
 					<li>
-						<a href="#">About Me</a>
-						<ul></ul>
+						<a href="#" onClick={executeScrollDeets}>This Project</a>
+					</li>
+					<li>
+						<a href="#" onClick={executeScrollAboutMe}>About Me</a>
 					</li>
 				</ul>
 			</div>
@@ -93,14 +120,14 @@ function FrontPage() {
 				<div className="site-layout-content">
 					<div className="header">
 						<div>
-							<h2>60 Days To</h2>
+							<h2>75 {/* <p>HARD</p>  */}Days To</h2>
 							<div style={{ display: "flex", marginTop: "-40px" }}>
 								<h2 style={{ padding: "0px" }}>Gl</h2>{" "}
 								<Progress
 									type="circle"
 									trailColor="grey"
 									strokeColor="#5450a8"
-									percent={28}
+									percent={1}
 									format={(percent) => `Day ${percent}`}
 									width={90}
 								/>
@@ -111,6 +138,7 @@ function FrontPage() {
 						<div>
 							<img className="mainSvg" src={require("./gym1.gif")} />
 						</div>
+						<div>
 						<div className="site-statistic-demo-card">
 							<Row gutter={16}>
 								<Col span={8}>
@@ -151,6 +179,11 @@ function FrontPage() {
 								</Col>
 							</Row>
 						</div>
+						<div>
+							<TotalStats />
+						</div>
+						</div>
+						
 					</div>
 
 					<Carousel style={{ marginTop: "-10%" }} effect="fade">
@@ -160,9 +193,7 @@ function FrontPage() {
 							</h3>
 						</div>
 						<div>
-							<h3 style={contentStyle}>
-								<TotalStats />
-							</h3>
+							<h3 style={contentStyle}></h3>
 						</div>
 						<div>
 							<h3 style={contentStyle}>3</h3>
@@ -171,6 +202,7 @@ function FrontPage() {
 							<h3 style={contentStyle}>4</h3>
 						</div>
 					</Carousel>
+
 					<div className="sectionHead">
 						<h1>Daily Progress</h1>
 						{/* <img
@@ -231,6 +263,33 @@ function FrontPage() {
 						</h1>
 						<Nutrition refBasic={myNut1} refCico={refCico} />
 					</div>
+					<div ref={myWork}>
+						<h1
+							style={{ paddingTop: "1px", paddingBottom: "80px" }}
+							className="sectionHead"
+						>
+							WORKOUT
+						</h1>
+						<Workout  />
+					</div>
+					<div ref={projDeet}>
+						<h1
+							style={{ paddingTop: "1px", paddingBottom: "80px" }}
+							className="sectionHead"
+						>
+							WHAT IS THIS ?
+						</h1>
+						<ProjectDeets />
+					</div>
+					<div ref={aboutMe}>
+						<h1
+							style={{ paddingTop: "1px", paddingBottom: "80px" }}
+							className="sectionHead"
+						>
+							ABOUT ME
+						</h1>
+						<About />
+					</div>
 				</div>
 			</Content>
 			<Footer
@@ -238,7 +297,7 @@ function FrontPage() {
 					textAlign: "center",
 					fontFamily: "Hoefler Text, Georgia, Garamond, Times, serif",
 					fontSize: "18px",
-					backgroundColor:"#ccc",
+					backgroundColor: "#ccc",
 				}}
 			>
 				Don't let perfect be the enemy of good.

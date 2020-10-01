@@ -21,7 +21,7 @@ html {
 }
 .header {
 	display: grid;
-	grid-template-columns: min-content 1fr 0.5fr;
+	grid-template-columns: min-content 4fr 3fr;
 	align-items: center;
 /* 	background-image: url("./backRings.gif");
 	background-size: 600px; */
@@ -325,4 +325,8 @@ h2{
 	border-top: dotted 1px rgba(255,255,255,.15);
 	border-bottom: dotted 1px rgba(255,255,255,.15);
 	background: rgba(0,223,252,.02);
+}
+
+.statsSecond  {
+	display: contents;
 }

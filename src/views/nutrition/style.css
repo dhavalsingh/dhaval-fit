@@ -15,7 +15,9 @@ p,a{
 }
 h3{
     font-weight:800;
-    font-size: 18px;
+    font-size: 20px;
+    text-align: center;
+
 }
 [data-theme='compact'] .site-collapse-custom-collapse .site-collapse-custom-panel,
 .site-collapse-custom-collapse .site-collapse-custom-panel {

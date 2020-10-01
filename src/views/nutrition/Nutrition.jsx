@@ -18,7 +18,7 @@ function Nutrition({ refBasic, refCico }) {
 				on your own.
 			</p>
 			<p>That being said, let's begin!</p>
-			<h3 ref={refBasic}>First Steps:</h3>
+			<h3  ref={refBasic}>First Steps</h3>
 			<p>
 				As a begginer there are only 2 things to keep in mind when it comes to
 				Nutrition.
@@ -117,7 +117,7 @@ function Nutrition({ refBasic, refCico }) {
 			<p>
 				Once you have these simple habits down, its time to calculate a bit.
 			</p>
-			<h3 ref={refCico}>CICO:</h3>
+			<h3 ref={refCico}>CICO</h3>
 			<p>
 				Losing weight is a very simple science, eat less than what your body
 				needs and the scale will go down. To know how many calories your body
