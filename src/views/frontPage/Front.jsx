@@ -157,7 +157,7 @@ function FrontPage() {
 									<Card>
 										<Statistic
 											title="Current"
-											value={76.9}
+											value={77.7}
 											precision={1}
 											valueStyle={{ color: "#5450a9" }}
 											prefix={<VerticalAlignMiddleOutlined />}
