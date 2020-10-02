@@ -18,7 +18,7 @@ function Nutrition({ refBasic, refCico }) {
 				on your own.
 			</p>
 			<p>That being said, let's begin!</p>
-			<h3  ref={refBasic}>First Steps</h3>
+			<h3 ref={refBasic}>First Steps</h3>
 			<p>
 				As a begginer there are only 2 things to keep in mind when it comes to
 				Nutrition.
@@ -127,15 +127,82 @@ function Nutrition({ refBasic, refCico }) {
 				</a>
 			</p>
 			<p>
-				CICO stands for "calories in, calories out". Now that you have your
-				calories out calculated, you need to know your calories in.
+				CICO stands for "calories in, calories out". Now that you know how many
+				calories you need, you want to know your calories intake.
 			</p>
 			<Tabs defaultActiveKey="1">
 				<TabPane tab="Tracking" key="1">
-					<p>You need to start logging anything that goes in your mouth</p>
+					<span className="tldrText">TLDR: Track your Macros.</span>
+					<p>
+						You need to start tracking anything and everything that goes in your
+						mouth. Once you get a decent idea what food contains what macros, it
+						will get easier trust me, but for the first few weeks its a chore.
+						There are a lot of great apps to help with this, i use MFP(My
+						Fitness Pal).
+					</p>
 				</TabPane>
-				<TabPane tab="Eat Simple" key="2"></TabPane>
-				<TabPane tab="Use a Food Scale" key="3"></TabPane>
+				<TabPane tab="Use a Food Scale" key="2">
+					<span className="tldrText">TLDR: Use a food scale.</span>
+					<p>
+						The title says it all. Dont try to guess, its not so easy. Use a
+						food scale it will make your task of tracking really easy and keep
+						you on point.
+					</p>
+				</TabPane>
+				<TabPane tab="Eat Simple/Cook at home" key="3">
+					<span className="tldrText">TLDR: Eat Food that is easy to track</span>
+					<p>
+						Its really easy to know whats on your plate if you have cooked it
+						yourself and you can make sure there are no hidden calories
+						anywhere. If you can't cook at home try and eat/order from places
+						that tell you the macros so that your calculations are not messed
+						up.
+					</p>
+				</TabPane>
+			</Tabs>
+			<h3>Managing Macros </h3>
+			<p>
+				Now there a ton of myths on this topic, so we shall go a bit deeper into
+				this topic so you can make your choices smartly. First Lets see what the
+				macros are and what do they do!
+			</p>
+			<Tabs>
+				<TabPane tab="Protein" key="1"></TabPane>
+
+				<TabPane tab="Carbohydrates" key="2">
+					<span className="tldrText">
+						TLDR: Carbs are your main energy source(NOT YOUR ENEMY)
+					</span>
+					<p>
+						Carbs are the most hated of all macros for no reason at all. The
+						main purpose of carbs is to provide you instant energy. They will
+						also help in recovery after you workout. The main reason people feel
+						like eating carbs makes them gain weight is because carbs store
+						water, so the instant weight you start losing after eating less
+						carbs is majorly water weight and will all come back once you start
+						eating carbs again.
+					</p>
+					<p>
+						What you want is a suatainable way to lose weight and not gain it
+						all back the next day you stop dieting. So eat your carbs, in
+						moderation. There are 2 types of carbs
+						<Tabs>
+							<TabPane tav="Complex Carbs" key="1">
+								<span className="tldrText">
+									TLDR: Complex Carbs are good for you. Eg: wheat, rice,
+									vegetables, fruits, oats etc..
+								</span>
+								<p>
+									Complex carbs are made of complex molecules strung in long
+									chains and takes more time and energy for your body to digest
+									them. As it takes longer for them to digest, they keep you
+									full and provide energy throughout the day.
+								</p>
+							</TabPane>
+						</Tabs>
+					</p>
+				</TabPane>
+				<TabPane tab="Fats" key="3"></TabPane>
 			</Tabs>
 			<Tdee />
 		</div>

@@ -31,6 +31,7 @@ import "./styles.css";
 import { useState } from "react";
 
 const { Content, Footer } = Layout;
+
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 function FrontPage() {
@@ -68,6 +69,7 @@ function FrontPage() {
 
 	return (
 		<Layout className="layout">
+			<BackTop />
 			<div>
 				<ul id="menu">
 					<li>
@@ -129,7 +131,7 @@ function FrontPage() {
 									type="circle"
 									trailColor="grey"
 									strokeColor="#5450a8"
-									percent={1}
+									percent={2}
 									format={(percent) => `Day ${percent}`}
 									width={90}
 								/>
@@ -159,7 +161,7 @@ function FrontPage() {
 										<Card>
 											<Statistic
 												title="Current"
-												value={77.7}
+												value={77.2}
 												precision={1}
 												valueStyle={{ color: "#5450a9" }}
 												prefix={<VerticalAlignMiddleOutlined />}
@@ -269,7 +271,6 @@ function FrontPage() {
 						</h1>
 						<ProjectDeets />
 					</div>
-					<BackTop />
 					<div ref={aboutMe}>
 						<h1
 							style={{ paddingTop: "1px", paddingBottom: "80px" }}

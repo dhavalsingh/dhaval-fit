@@ -1,5 +1,5 @@
 import React from "react";
 function Workout() {
-	return <div>Coming soon</div>;
+	return <div></div>;
 }
 export default Workout;

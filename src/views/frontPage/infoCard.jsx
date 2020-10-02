@@ -107,7 +107,7 @@ function InfoCard({ cardData }) {
 									maxWidth: "200px",
 									maxHeight: "300px",
 								}}
-								src={require("./day1.jpg")}
+								src={cardData.pic}
 							/>
 						</Col>
 						<Col span="12">
