@@ -9,10 +9,10 @@ import {
 
 function TotalStats() {
 	const stats = {
-		time: "402",
-		workouts: "4",
-		steps: "34246",
-		pages: "20",
+		time: "512",
+		workouts: "6",
+		steps: "47994",
+		pages: "34",
 	};
 	return (
 		<div className="site-statistic-demo-card">

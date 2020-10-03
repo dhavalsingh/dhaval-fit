@@ -131,7 +131,7 @@ function FrontPage() {
 									type="circle"
 									trailColor="grey"
 									strokeColor="#5450a8"
-									percent={2}
+									percent={3}
 									format={(percent) => `Day ${percent}`}
 									width={90}
 								/>
