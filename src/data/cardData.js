@@ -315,4 +315,51 @@ export const cardData = [
 			},
 		],
 	},
+	{
+		day: 4,
+		date: "Oct 4",
+		pic: "https://imgur.com/t5LXfgu.jpg",
+		extraInfo: {
+			intake: "1500",
+			burned: "562",
+			steps: "10813",
+			water: "3.8L",
+			sleep: "6.28Hrs",
+			p: 78,
+			f: 25,
+			c: 102,
+		},
+		gym: [
+			{
+				key: "1",
+				exe: "Streching and walking",
+				rep: "",
+				set: "",
+				description: "Recovery Day",
+			},
+		],
+		food: [
+			{
+				key: "1",
+				meal: "Lunch",
+				cal: 539,
+				mac: "29P 88C 8F",
+				description: "Kidney Beans and rice+curd",
+			},
+			{
+				key: "2",
+				meal: "Dinner - 1",
+				cal: 107,
+				mac: "28P 2C 0F",
+				description: "Protien shake",
+			},
+			{
+				key: "3",
+				meal: "Dinner - 2",
+				cal: 304,
+				mac: "25P 13C 17F",
+				description: "Eggs sandwhich",
+			},
+		],
+	},
 ];
