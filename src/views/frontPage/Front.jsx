@@ -131,7 +131,7 @@ function FrontPage() {
 									type="circle"
 									trailColor="grey"
 									strokeColor="#5450a8"
-									percent={3}
+									percent={5}
 									format={(percent) => `Day ${percent}`}
 									width={90}
 								/>
@@ -161,7 +161,7 @@ function FrontPage() {
 										<Card>
 											<Statistic
 												title="Current"
-												value={77.2}
+												value={76.8}
 												precision={1}
 												valueStyle={{ color: "#5450a9" }}
 												prefix={<VerticalAlignMiddleOutlined />}
