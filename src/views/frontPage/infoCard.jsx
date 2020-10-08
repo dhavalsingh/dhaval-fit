@@ -193,7 +193,7 @@ function InfoCard({ cardData }) {
 									<p style={{ margin: 0 }}>{record.description}</p>
 								),
 							}}
-							pagination={{ pageSize: 5 }}
+							pagination={{ pageSize: 4 }}
 						/>
 					</div>
 				</Card>
