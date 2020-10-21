@@ -129,6 +129,12 @@ export const data = [
 	{ date: "2020-10-14", value: 76.3 },
 	{ date: "2020-10-15", value: 75.7 },
 	{ date: "2020-10-16", value: 76.1 },
+
+	{ date: "2020-10-17", value: 76.1 },
+	{ date: "2020-10-18", value: 76.2 },
+	{ date: "2020-10-19", value: 76.4 },
+	{ date: "2020-10-20", value: 75.9 },
+	{ date: "2020-10-21", value: 75.8 },
 ];
 
 export const config = {
